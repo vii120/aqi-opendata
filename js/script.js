@@ -32,7 +32,7 @@ var app = new Vue({
   methods: {
     getData() {
       const vm = this;
-      const api = 'http://opendata2.epa.gov.tw/AQI.json';
+      const api = 'https://cors-anywhere.herokuapp.com/opendata2.epa.gov.tw/AQI.json';
       $.get(api).then(function( response ) {
         vm.data = response;
         //add starStatus to each object
