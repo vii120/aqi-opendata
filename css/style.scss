@@ -1,0 +1,119 @@
+/*-------------------*/
+/* $Catalog
+/*-------------------*/
+/* $Catalog
+/* $Font
+//* $SCSS Variables
+/* $Global
+/* $Header
+/* $Selector
+/* $Cards
+
+/*-------------------*/
+/* $Font
+/*-------------------*/
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+//*-------------------*/
+//* $SCSS Variables
+//*-------------------*/
+$bg-color: #f1f1f1;
+
+$primary-color: #4e709d;
+$star-color: #0b8457;
+$light-color: #ccc;
+
+$status1: #ffe578;  //良好
+$status2: #fff1bc;  //普通
+$status3: #ebebeb;  //對敏感族群不健康
+$status4: #ffc7c7;  //對所有族群不健康
+$status5: #ff9393;  //非常不健康
+$status6: #ff6767;  //危害
+
+/*-------------------*/
+/* $Global
+/*-------------------*/
+*{
+  position: relative;
+}
+body{
+  font-family: 'Noto Sans TC', sans-serif;
+  background-color: $bg-color;
+}
+/*-------------------*/
+/* $Header
+/*-------------------*/
+header{
+  text-align: center;
+  h1{
+    color: $primary-color;
+    margin-bottom: 30px;
+  }
+  .ref{
+    font-size: 14px;
+    a{text-decoration: none;}
+  }
+}
+h4{
+  text-align: center;
+}
+
+/*-------------------*/
+/* $Selector
+/*-------------------*/
+select{
+  margin: 24px 0;
+}
+
+/*-------------------*/
+/* $Example
+/*-------------------*/
+.example{
+  margin: 36px 0;
+  .card{
+    text-align: center;
+    width: 100%;
+    margin-right: 8px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}
+/*-------------------*/
+/* $Cards
+/*-------------------*/
+.u-btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.card-header{
+  font-weight: bold;
+}
+.time{
+  font-size: 14px;
+  font-style: italic;
+}
+.fa-star{
+  color: $star-color;
+}
+.status-aqi1 {
+  background-color: $status1;
+}
+.status-aqi2 {
+  background-color: $status2;
+}
+.status-aqi3 {
+  background-color: $status3;
+}
+.status-aqi4 {
+  background-color: $status4;
+}
+.status-aqi5 {
+  background-color: $status5;
+}
+.status-aqi6 {
+  background-color: $status6;
+}

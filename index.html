@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-YW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>台灣各縣市空氣品質指標(AQI)</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+  <!-- font awesome -->
+  <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+  <!-- custom css -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <header class="mt-3">
+        <h1>空氣品質指標(AQI)</h1>
+        <div class="ref">資料來源：
+          <a href="https://opendata.epa.gov.tw/Data/Contents/AQI/" target="_blank">行政院環境保護署 - 環境資源資料開放平臺</a>
+        </div>
+        <div class="example">
+          <h4>AQI說明與其對應顏色</h4>
+          <div class="d-flex justify-content-between">
+            <div v-for="(item, index) in exStatus" :key="index"
+            class="card" :class="`status-aqi${index+1}`">{{item}}</div>
+          </div>
+        </div>
+        <select class="form-control" v-model="filter">
+          <option value="">--- 全部城市 ---</option>
+          <option :value="item" v-for="item in location">{{item}}</option>
+        </select>
+      </header>
+      <main>
+        <h4>關注城市
+          <button type="button" class="btn btn-warning u-btn" @click="clearStar()">清除所有關注</button>
+        </h4>
+        <div class="card-columns">
+          <opendata v-for="(item, key) in starData" :aqi-data="item" :key="key" @star="starArray"></opendata>
+        </div>
+
+        <hr>
+        <h4 v-if="filter==''">所有城市</h4>
+        <h4 v-else>篩選城市：{{filter}}</h4>
+        <div class="card-columns">
+          <opendata v-for="(item, key) in filtData" :aqi-data="item" :key="key" @star="starArray"></opendata>
+        </div>
+      </main>
+    </div>
+  </div>
+
+<!-- vue & jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- custom js -->
+<script src="js/script.js"></script>
+<!-- vue template -->
+<script type="text/x-template" id="cardOutput">
+  <div class="card" :class="statusClass(aqiData.Status)">
+    <div class="card-header">{{aqiData.County}} - {{aqiData.SiteName}}
+      <a href="#" class="float-right" @click.prevent="starChange">
+        <i class="fa-star" :class="aqiData.starStatus?'fas':'far'"></i>
+      </a>
+    </div>
+    <div class="card-body">
+      <ul class="list-unstyled">
+        <li>AQI 指數： {{aqiData.AQI}}</li>
+        <li>PM2.5： {{aqiData['PM2.5']}}</li>
+        <li>說明： {{aqiData.Status}}</li>
+      </ul>
+    <span class="time">{{aqiData.PublishTime}}</span>
+    </div>
+  </div>
+</script>
+
+</body>
+</html>

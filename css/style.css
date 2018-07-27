@@ -1,0 +1,118 @@
+/*-------------------*/
+/* $Catalog
+/*-------------------*/
+/* $Catalog
+/* $Font
+//* $SCSS Variables
+/* $Global
+/* $Header
+/* $Selector
+/* $Cards
+
+/*-------------------*/
+/* $Font
+/*-------------------*/
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+/*-------------------*/
+/* $Global
+/*-------------------*/
+* {
+  position: relative;
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background-color: #f1f1f1;
+}
+
+/*-------------------*/
+/* $Header
+/*-------------------*/
+header {
+  text-align: center;
+}
+header h1 {
+  color: #4e709d;
+  margin-bottom: 30px;
+}
+header .ref {
+  font-size: 14px;
+}
+header .ref a {
+  text-decoration: none;
+}
+
+h4 {
+  text-align: center;
+}
+
+/*-------------------*/
+/* $Selector
+/*-------------------*/
+select {
+  margin: 24px 0;
+}
+
+/*-------------------*/
+/* $Example
+/*-------------------*/
+.example {
+  margin: 36px 0;
+}
+.example .card {
+  text-align: center;
+  width: 100%;
+  margin-right: 8px;
+}
+.example .card:last-child {
+  margin-right: 0;
+}
+
+/*-------------------*/
+/* $Cards
+/*-------------------*/
+.u-btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.card-header {
+  font-weight: bold;
+}
+
+.time {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.fa-star {
+  color: #0b8457;
+}
+
+.status-aqi1 {
+  background-color: #ffe578;
+}
+
+.status-aqi2 {
+  background-color: #fff1bc;
+}
+
+.status-aqi3 {
+  background-color: #ebebeb;
+}
+
+.status-aqi4 {
+  background-color: #ffc7c7;
+}
+
+.status-aqi5 {
+  background-color: #ff9393;
+}
+
+.status-aqi6 {
+  background-color: #ff6767;
+}
+
+/*# sourceMappingURL=style.css.map */
