@@ -21,6 +21,3 @@ https://vii120.github.io/aqi-opendata/
 若想要清除關注資料，可點擊"取消所有關注"
 
 ![stared](https://i.imgur.com/7DY7Iic.png)
-
-## Reference
-六角學院：[Vue 出一個電商網站 ](https://www.udemy.com/vue-hexschool/)
